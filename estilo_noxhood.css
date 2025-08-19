@@ -1,0 +1,650 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(228, 228, 228);
+    color: black;
+    position: relative;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Modo oscuro */
+body.modo-oscuro {
+    background-color: #000000;
+    color: white;
+}
+
+header {
+    width: 100%;
+    margin: 0;
+    padding: 10px 20px;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(205, 205, 205);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+body.modo-oscuro header {
+  background-color: #444;
+}
+
+.logo-container img {
+    height: 70px;
+}
+
+.nav-buttons {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+}
+
+.nav-buttons button {
+  background-color: transparent;
+  border: 2px solid #1a1a1a;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.nav-buttons button:hover {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: 160%;
+}
+
+.search-toggle {
+  background-color: transparent;
+  background-color: transparent;
+  border-radius: 25px;
+  padding: 8px 16px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; transform: 0.2s ease;
+}
+
+.search-toggle:hover {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.search-box input {
+  width: 0;
+  opacity: 0;
+  padding: 10px 20px 10px 40px;
+  border: 2px solid #1a1a1a;
+  border-radius: 30px;
+  font-size: 16px;
+  margin-left: 10px;
+  transition: width 0.4s ease, opacity 0.3s ease;
+}
+
+/* Cuando está activa */
+.search-box.active input {
+  width: 100px;
+  opacity: 1;
+  right: 100%;
+}
+
+/* ---- Modo Oscuro ---- */
+body.modo-oscuro .search-toggle {
+  border-color: #eee;
+  color: #eee;
+}
+
+body.modo-oscuro .search-toggle:hover {
+  background-color: #eee;
+  color: #000;
+}
+
+body.modo-oscuro .search-box input {
+  background-color: #2a2a2a;
+  color: #fff;
+  border-color: #fffbfb;
+}
+
+/*BOTON-OSCURO*/
+#modo-btn {
+  position: fixed;
+  top: 18px;
+  right: 20px;
+  z-index: 9999;
+  background-color: rgb(50, 50, 50);
+  color: #fff;
+  border: none;
+  width: 200px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+}
+
+body.modo-oscuro #modo-btn {
+  background-color: rgb(149, 148, 148);
+}
+
+#modo-btn:hover {
+ transform: scale(1.05);
+ background-color: #444;
+}
+
+nav a {
+  margin: 0 10px;
+  padding: 10px 20px;
+  border: 1px solid black;
+  border-radius: 8px;
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  background-color: white;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background-color: #ddd;
+
+}
+
+/* Menú desplegable */
+.dropdown {
+  position: flex;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  background-color: rgb(50, 50, 50);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+}
+
+body.modo-oscuro .dropdown-toggle {
+  background-color: rgb(149, 148, 148);
+}
+
+.dropdown-toggle:hover {
+  background: #444;
+  transform: scale(1.05);
+}
+
+body.modo-oscuro .dropdown-toggle:hover {
+  background-color: rgb(149, 148, 148);
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  background: #111;
+  min-width: 180px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+
+.dropdown-menu button {
+  background: none;
+  color: white;
+  padding: 10px;
+  width: 17%;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.3s ease;
+}
+
+
+.font-size-controls {
+  position: fixed;
+  transition: all 0.3s ease;
+  justify-content: space-around;
+  margin: 4px;
+}
+
+.font-size-controls button {
+  position: flex;
+  right: 10%;
+  z-index: 9999;
+  background-color: rgb(50, 50, 50);
+  color: #fff;
+  border: none;
+  width: 40px;
+  padding: 10px 10px;
+  border-radius: 25px;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+}
+
+body.modo-oscuro .font-size-controls button {
+  background-color: rgb(149, 148, 148);
+}
+.font-size-controls button:hover {
+    transform: scale(1.05);
+}
+
+body.modo-oscuro .font-size-controls button:hover {
+  background: #c1c1c1;
+}
+
+/* Mostrar menú al activar clase */
+.dropdown.open .dropdown-menu {
+  display: block;
+}
+/*Texto de bienvenida*/
+.titulo-seccion {
+  text-align: left; /* Cambiado a izquierda */
+  margin: 60px 0 40px 8%; /* Empujado desde la izquierda */
+  max-width: 600px; /* Para que no se extienda demasiado */
+}
+
+.subtitulo {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.2); /* Sombra ligera para visibilidad */
+}
+
+.titulo-principal {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.25); /* Sombra más fuerte */
+}
+
+/* Modo oscuro */
+body.modo-oscuro .subtitulo {
+  color: #ccc;
+}
+
+body.modo-oscuro .titulo-principal {
+  color: #fff;
+}
+
+
+/* Video banner */
+.video-banner {
+  position: relative;
+  width: 90%;
+  height: 400px;
+  margin: 40px auto;
+  border: 2px solid black;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.video-banner video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.video-overlay h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.boton-negro {
+  background-color: rgba(0, 0, 0, 0.873);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.boton-negro:hover {
+  background-color: #444;
+}
+
+/* Fondos fijos */
+.fondo-grafiti,
+.fondo-diablo,
+.fondo-mano {
+  position: fixed;
+  z-index: -1;
+  object-fit: contain;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.fondo-grafiti {
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  height: auto;
+}
+
+.fondo-diablo {
+  bottom: 0;
+  left: 50%;
+  transform: translate(-56%, 24%);
+  width: 297px;
+  height: auto;
+}
+
+.fondo-mano {
+  bottom: 0;
+  right: 0;
+  height: 123vh;
+  width: auto;
+  transform: translate(22%, 2%);
+}
+
+/* Productos */
+.productos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 20px;
+}
+
+.producto {
+    background-color: rgba(222, 220, 220, 0.85);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+body.modo-oscuro .producto {
+background-color: rgba(80, 79, 79, 0.801);
+}
+
+/* Efecto hover en productos */
+.producto:hover {
+    transform: scale(1.05);
+}
+
+.producto img {
+    width: 150px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.producto img:hover {
+    transform: scale(1.05);
+}
+
+/* Botones */
+.btn {
+    background-color: rgb(107, 106, 106);
+    color: rgb(255, 255, 255);
+    padding: 8px 12px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background-color: #444;
+}
+
+/* Modo oscuro botones */
+body.modo-oscuro .btn {
+    background-color: white;
+    color: black;
+}
+
+body.modo-oscuro .btn:hover {
+    background-color: #aaaaaa75;
+}
+
+.quienes-somos {
+  background-color: #c9c9c9;
+  color: rgb(0, 0, 0);
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+body.modo-oscuro .quienes-somos {
+  background-color: #444;
+}
+
+.cuadro-info {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 40px 30px;
+  max-width: 700px;
+  width: 100%;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+body.modo-oscuro .cuadro-info {
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+/* Intercalado */
+.cuadro-info.izquierda {
+  align-self: flex-start;
+  margin-left: 40px;
+}
+
+.cuadro-info.derecha {
+  align-self: flex-end;
+  margin-right: 40px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .cuadro-info.izquierda,
+  .cuadro-info.derecha {
+    align-self: center;
+    margin: 0;
+  }
+}
+
+.testimonios {
+  background-color: white;
+  color: rgb(0, 0, 0);
+  padding: 80px 20px;
+  text-align: center;
+  z-index: 5;
+  position: relative;
+}
+
+body.modo-oscuro .testimonios {
+background-color: rgb(0, 0, 0);
+color:rgb(255, 255, 255)
+}
+.testimonios h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  font-family: 'Playfair Display', serif;
+}
+
+.testimonios-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.testimonio1 {
+  background-color: #cccc;
+  border: 1px solid #cccc;
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 300px;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 0 20px rgba(109, 109, 109, 0.225);
+}
+
+body.modo-oscuro .testimonio1 {
+    background-color: #434242;
+  border: 1px solid #333;
+}
+
+.testimonio2 {
+  background-color: #cccc;
+  border: 1px solid #cccc;
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 300px;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 0 20px rgba(109, 109, 109, 0.225);
+}
+
+body.modo-oscuro .testimonio2 {
+    background-color: #434242;
+  border: 1px solid #333;
+}
+
+.testimonio3 {
+  background-color: #cccc;
+  border: 1px solid #cccc;
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 300px;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 0 20px rgba(109, 109, 109, 0.225);
+}
+
+body.modo-oscuro .testimonio3 {
+    background-color: #434242;
+  border: 1px solid #333;
+}
+
+.testimonio p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.testimonio h4 {
+  font-size: 14px;
+  color: #000000;
+  font-weight: thigh;
+}
+
+body.modo-oscuro .testimonio h4 {
+  color: #ffffff;
+}
+
+/* Footer */
+.footer-noxhood {
+  background-color: #ffffff; /* un poco más oscuro que el fondo negro */
+  color: #e0e0e0;
+  padding: 60px 20px;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  border-top: 1px solid #333;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-noxhood .logo {
+  width: 125px; /* o el tamaño que quieras */
+  height: auto;
+}
+
+body.modo-oscuro .footer-noxhood {
+  background-color: #1a1a1a;
+  color: #ccc;
+}
+
+.footer-contenido {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  width: 100px;
+  margin-bottom: 25px;
+  opacity: 0.8;
+}
+
+.footer-info p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.footer-redes {
+  margin-top: 30px;
+}
+
+.footer-redes a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #999;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+body.modo-oscuro .footer-redes a {
+  color: #aaa;
+}
+
+.footer-redes a:hover {
+  color: #fff;
+}
+
+body.modo-oscuro .footer-redes a:hover {
+  color: #fff;
+}
+

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noxhood</title>
+  <link rel="icon" href="Imagenes/Moon.png">
+  <link rel="stylesheet" href="estilo_noxhood.css">
+</head>
+<body>
+
+<header>
+  <div class="logo-container">
+    <img src="Imagenes/logo_oscuro.png" alt="Logo Noxhood" class="logo" id="logo-header">
+  </div>
+
+  <nav class="nav-buttons">
+    <button onclick="location.href='index.html'">Inicio</button>
+    <button onclick="location.href='pantalones.html'">Pantalones</button>
+    <button onclick="location.href='camisas.html'">Camisas</button>
+    <button onclick="location.href='redes.html'">Redes</button>
+  </nav>
+
+  <div class="header-right">
+    <div class="search-box">
+      <button class="search-toggle" aria-label="Buscar">🔍</button>
+      <input type="text" placeholder="Search">
+    </div>
+  </div>
+
+      <!-- Botón que abre el menú -->
+    <div class="dropdown">
+      <button class="dropdown-toggle">⚙</button>
+      <div class="dropdown-menu">
+        <div class="font-size-controls">
+          <button id="increase-font">A+</button>
+          <button id="decrease-font">A-</button>
+        </div>
+        <button id="modo-btn">🌙 Modo oscuro</button>
+      </div>
+</header>
+<!-- Banner con video -->
+    <section class="video-banner">
+      <video autoplay muted loop playsinline>
+        <source src="Videos/Video.mp4" type="video/mp4" />
+        Tu navegador no soporta el video.
+      </video>
+      <div class="video-overlay">
+        <h2>Revisa la nueva colección</h2>
+        <a href="#productos" class="boton-negro">Ver ahora</a>
+      </div>
+    </section>
+
+    <!-- Sección de camisas -->
+    <section id="camisas" class="productos">
+      <div class="producto">
+        <img src="Imagenes/camisa1.jpg" alt="Camisa Graffiti">
+        <h3>Camisa Graffiti</h3>
+        <p>$89.900</p>
+        <div class="botones">
+          <button class="btn">Pagar ya</button>
+          <button class="btn">Añadir al carrito</button>
+        </div>
+      </div>
+      <div class="producto">
+        <img src="Imagenes/camisa2.jpg" alt="Camisa D/A">
+        <h3>Camisa D/A</h3>
+        <p>$94.900</p>
+        <div class="botones">
+          <button class="btn">Pagar ya</button>
+          <button class="btn">Añadir al carrito</button>
+        </div>
+      </div>
+      <div class="producto">
+        <img src="Imagenes/camisa3.jpg" alt="Camisa Mano">
+        <h3>Camisa Mano</h3>
+        <p>$84.900</p>
+        <div class="botones">
+          <button class="btn">Pagar ya</button>
+          <button class="btn">Añadir al carrito</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de pantalones -->
+    <section id="pantalones" class="productos">
+      <div class="producto">
+        <img src="Imagenes/cargo1.jpg" alt="Pantalón Urbano Negro">
+        <h3>Pantalón Urbano Negro</h3>
+        <p>$109.900</p>
+        <div class="botones">
+          <button class="btn">Pagar ya</button>
+          <button class="btn">Añadir al carrito</button>
+        </div>
+      </div>
+      <div class="producto">
+        <img src="Imagenes/cargo2.jpg" alt="Pantalón Graffiti">
+        <h3>Pantalón Graffiti</h3>
+        <p>$114.900</p>
+        <div class="botones">
+          <button class="btn">Pagar ya</button>
+          <button class="btn">Añadir al carrito</button>
+        </div>
+      </div>
+      <div class="producto">
+        <img src="Imagenes/cargo3.jpg" alt="Pantalón Clásico Street">
+        <h3>Jean estilo baggy</h3>
+        <p>$99.900</p>
+        <div class="botones">
+          <button class="btn">Pagar ya</button>
+          <button class="btn">Añadir al carrito</button>
+        </div>
+      </div>
+    </section>
+
+<!-- Imágenes de fondo -->
+    <img src="Imagenes/grafiti.png" class="fondo-grafiti" alt="">
+    <img src="Imagenes/diablo-angel.png" class="fondo-diablo" alt="">
+    <img src="Imagenes/Mano_noxhood.png" class="fondo-mano" alt="">
+
+     <!-- Sección "Quiénes somos y visión" -->
+  <section class="quienes-somos">
+    <div class="cuadro-info izquierda">
+      <h2>Quiénes somos</h2>
+      <p>Somos una marca que busca romper los estereotipos y expresar identidad a través del diseño urbano. Cada prenda cuenta una historia de resistencia, arte y libertad.</p>
+    </div>
+
+    <div class="cuadro-info derecha">
+      <h2>Nuestra visión</h2>
+      <p>Queremos llegar a ser una de las marcas referentes en moda urbana en Latinoamérica, fusionando creatividad, calidad y compromiso social.</p>
+    </div>
+  </section>
+
+  <section class="testimonios">
+      <h2>Lo que dicen nuestros clientes</h2>
+      <div class="testimonios-contenedor">
+        <div class="testimonio testimonio1">
+          <p>"La calidad de las prendas de Noxhood es impresionante. Sin duda volveré a comprar."</p>
+         <h4>- Camila R.</h4>
+        </div>
+
+        <div class="testimonio testimonio2">
+          <p>"Excelente atención al cliente y diseños únicos que destacan. ¡Los recomiendo!"</p>
+          <h4>- Mateo G.</h4>
+      </div>
+
+        <div class="testimonio testimonio3">
+          <p>"Me encantó la experiencia de compra, todo llegó a tiempo y se siente premium."</p>
+          <h4>- Laura V.</h4>
+        </div>
+      </div>
+  </section>
+
+  <footer class="footer-noxhood">
+
+    <div class="footer-contenido">
+      <img src="Imagenes/logo_oscuro.png" alt="Logo Noxhood" class="logo" id="logo-footer">
+    </div>
+    <div class="footer-info">
+      <p>© 2025 Noxhood. Todos los derechos reservados.</p>
+      <p>contacto@noxhood.com</p>
+    </div>
+
+    <div class="footer-redes">
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">WhatsApp</a>
+    </div>
+  </footer>
+</body>
+<script src="script.js"></script>
+</html>
